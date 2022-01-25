@@ -1,0 +1,12 @@
+<div mat-dialog-content>
+    <p>Add your product</p>
+    <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Enter product name</mat-label>
+        <input matInput [(ngModel)]="productName" >
+    </mat-form-field>
+
+</div>
+<div mat-dialog-actions>
+    <button mat-raised-button color="accent" (click)="onCancelClick()"> Cancel </button>
+    <button mat-raised-button color="primary" (click)="addProduct()"> Save </button>
+</div>

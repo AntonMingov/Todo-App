@@ -1,0 +1,48 @@
+<div class="h-container">
+  <h2> Todo Application </h2>
+</div>
+
+<!-- <div >
+  <button mat-button color="warn" class="btn-add" ></button>
+</div> -->
+
+<div class="btn-container">
+  <button mat-fab color="primary" aria-label="Add new product" (click)="openDialogProduct()">
+    <mat-icon> add_task </mat-icon>
+  </button>
+</div>
+
+<table mat-table [dataSource]="dataSource" class="mat-table">
+
+  <!-- Id Column -->
+  <ng-container matColumnDef="id">
+    <th mat-header-cell *matHeaderCellDef> No. </th>
+    <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+  </ng-container>
+
+  <!-- Name Column -->
+  <ng-container matColumnDef="name">
+    <th mat-header-cell *matHeaderCellDef> Name </th>
+    <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="actions">
+    <th mat-header-cell *matHeaderCellDef> Actions </th>
+    <td mat-cell *matCellDef="let element">
+
+      <!-- <button mat-mini-fab color="primary" aria-label="Update product" class="btn-edit">
+        <mat-icon> edit </mat-icon>
+      </button> -->
+
+      <button mat-mini-fab color="warn" aria-label="Delete product" class="btn-delete"
+        (click)="onDeleteClick(element.id)">
+        <mat-icon> delete </mat-icon>
+      </button>
+
+    </td>
+  </ng-container>
+
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>

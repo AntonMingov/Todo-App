@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "target": "es6",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "declaration": true,
+    "outDir": "./dist",
+    "baseUrl": "./",
+    "esModuleInterop": true,
+    "removeComments": true,
+    "experimentalDecorators": true,
+    "sourceMap": true,
+    "rootDir": "./src/", 
+    "skipLibCheck": true, 
+  },
+  "exclude": ["node_modules", "dist", "src/db-scripts"]
+}
